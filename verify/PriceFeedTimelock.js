@@ -1,0 +1,5 @@
+module.exports = [
+  "0x0524af1B20a7F1c02A06CB73c8Ee15030B39F10e",
+  24 * 60 * 60,
+  "0x92Ad4b7ad86925f3903359D1aaDfA7149f972A6A",
+];

@@ -1,0 +1,208 @@
+npx hardhat run --network avax scripts/gmx/deployGMX.js
+npx hardhat verify --network avax 0x39E1Da9a034Fd5ADba01C7F6cFA8B5dE16dD908c
+npx hardhat run --network avax scripts/core/deployVault.js
+
+npx hardhat run --network avax scripts/peripherals/deployVaultReader.js
+npx hardhat run --network avax scripts/peripherals/deployReader.js
+npx hardhat run --network avax scripts/peripherals/deployRewardReader.js
+npx hardhat run --network avax scripts/gmx/deployTokens.js
+
+// change contract addresses
+npx hardhat run --network avax scripts/staking/deployRewardRouterV2.js
+
+// change contract addresses
+npx hardhat run --network avax scripts/core/deployOrderBook.js
+
+npx hardhat run --network avax scripts/peripherals/deployOrderBookReader.js
+
+npx hardhat run --network avax scripts/core/deployReferralStorage.js
+//call setTier of RefferralStorage
+npx hardhat run --network avax scripts/core/deployReferralReader.js
+npx hardhat run --network avax scripts/core/deployShortsTracker.js
+npx hardhat run --network avax scripts/access/deployTokenManager.js
+
+npx hardhat run --network avax scripts/core/deployPositionManager.js
+npx hardhat run --network avax scripts/core/deployPositionRouter.js
+
+
+//vault price feed set token config
+0	_token	address	0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7
+1	_priceFeed	address	0x0A77230d17318075983913bC2145DB16C7366156
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	
+
+0	_token	address	0x50b7545627a5162F82A992c33b87aDc75187B218
+1	_priceFeed	address	0x2779D32d5166BAaa2B2b658333bA7e6Ec0C65743
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	
+
+0	_token	address	0x152b9d0FdC40C096757F570A51E494bd4b943E50
+1	_priceFeed	address	0x2779D32d5166BAaa2B2b658333bA7e6Ec0C65743
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool
+
+0	_token	address	0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB
+1	_priceFeed	address	0x976B3D034E162d8bD72D6b9C989d545b839003b0
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	
+
+0	_token	address	0x130966628846BFd36ff31a822705796e8cb8C18D
+1	_priceFeed	address	0x54EdAB30a7134A16a54218AE64C73e1DAf48a8Fb
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	true
+
+0	_token	address	0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664
+1	_priceFeed	address	0xF096872672F44d6EBA71458D74fe67F9a77a23B9
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	true
+
+0	_token	address	0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E
+1	_priceFeed	address	0xF096872672F44d6EBA71458D74fe67F9a77a23B9
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	true
+
+0	_token	address	0x5947BB275c521040051D82396192181b413227A3
+1	_priceFeed	address	0x49ccd9ca821EfEab2b98c60dC60F518E765EDe9a
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	0
+
+0	_token	address	0x63a72806098Bd3D9520cC43356dD78afe5D386D9
+1	_priceFeed	address	0x3CA13391E9fb38a75330fb28f8cc2eB3D9ceceED
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	0
+
+//
+
+
+// Vault whitelist tokens
+
+0	_token	address	0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	25000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+0	_token	address	0x50b7545627a5162F82A992c33b87aDc75187B218
+1	_tokenDecimals	uint256	8
+2	_tokenWeight	uint256	15000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+0	_token	address	0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	20000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+0	_token	address	0x130966628846BFd36ff31a822705796e8cb8C18D
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	40000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	50000000
+5	_isStable	bool	true
+6	_isShortable	bool	
+
+0	_token	address	0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	25000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000000000000000000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+0	_token	address	0x50b7545627a5162F82A992c33b87aDc75187B218
+1	_tokenDecimals	uint256	8
+2	_tokenWeight	uint256	15000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000000000000000000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+0	_token	address	0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	20000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000000000000000000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+0	_token	address	0x130966628846BFd36ff31a822705796e8cb8C18D
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	40000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	50000000000000000000000000
+5	_isStable	bool	true
+6	_isShortable	bool
+
+0	_token	address	0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664
+1	_tokenDecimals	uint256	6
+2	_tokenWeight	uint256	15000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	50000000000000000000000000
+5	_isStable	bool	true
+6	_isShortable	bool	
+
+0	_token	address	0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E
+1	_tokenDecimals	uint256	6
+2	_tokenWeight	uint256	10000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	50000000000000000000000000
+5	_isStable	bool	true
+6	_isShortable	bool	
+
+//Link
+0	_token	address	0x5947BB275c521040051D82396192181b413227A3
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	25000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000000000000000000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+//AAVE
+0	_token	address	0x63a72806098Bd3D9520cC43356dD78afe5D386D9
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	25000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000000000000000000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+
+
+//Set Tokens Per Interval for RewardDistributor
+//
+Mint EsMMS token to StakedGmxDistributor
+
+deploy timelock
+//
+npx hardhat run --network avax scripts/peripherals/deployBatchSender.js
+
+
+npx hardhat run --network avax scripts/peripherals/deployPriceFeedTimelock.js
+npx hardhat run --network avax scripts/core/deployPriceFeed.js
+
+//deploy referral subgraph
+https://thegraph.com/docs/en/deploying/deploying-a-subgraph-to-hosted/
+
+PositionRouter should be vault timelock's contract handler
+
+
+reward distributers should have esMMS as rewardtoken
+src\pages\ClaimEsGmx\ClaimEsGmx.js has receiver addresses
+//complex contract verify
+npx hardhat verify --constructor-args arguments.js DEPLOYED_CONTRACT_ADDRESS
+npx hardhat verify --network avax --constructor-args verify/MLP.js 0x9d530DdC986bd20beC3E70dC5382dF2e0a1bE7a6
+npx hardhat verify --network avax --constructor-args verify/MintableBaseToken.js 0x6e29e6db1Ea778fCC17BA575C8fB22A4dfeAE08f
+npx hardhat verify --network avax --constructor-args verify/RewardTracker.js 0x8b498C45465f4a7e9CEc0D12Aa6a695A6b563A34
+npx hardhat verify --network avax --constructor-args verify/PositionManager.js 0xda18A5372fF256314fd3654FA074B4d949aBE823
+npx hardhat verify --network avax --constructor-args verify/PositionRouter.js 0xFe42F6CccD52542DFbB785dFa014Cb8ce70Bcf57
+npx hardhat verify --network avax 0xD3D403595ccBB99537Af13099aC89A102AAd70D1 "0x9e34FDE4Bf55061a1805C11654C21acCd34d511E" "0x6A154CE91003Cf4b8787280fd7C96D9BFb3f88C3" "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7" "0x2ff5dCfdB0C6b2a90480281c8dF77d0bc0884A49" "30" "20000000000000000"
+npx hardhat verify --network avax --constructor-args verify/PriceTimeLock.js 0x379aa69316Ab12A2ACD59134fF683eC068C0acFc
+npx hardhat verify --network avax --constructor-args verify/FastPriceFeed.js 0x68A644fFcC1BBEF5C8437c3FE3468424b959B684
